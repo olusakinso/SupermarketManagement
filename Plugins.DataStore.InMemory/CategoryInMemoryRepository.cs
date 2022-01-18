@@ -61,7 +61,8 @@ namespace Plugins.DataStore.InMemory
 
         public void DeleteCategory(int categoryId)
         {
-            categories?.Remove(GetCategoryById(categoryId));
+            var categoryToDelete = GetCategoryById(categoryId);
+            if (categoryToDelete != null) categories.Remove(categoryToDelete);
         }
     }
 }
